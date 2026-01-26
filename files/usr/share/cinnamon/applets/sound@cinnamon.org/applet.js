@@ -907,7 +907,9 @@ class Player extends PopupMenu.PopupMenuSection {
     }
 
     destroy() {
-        this._seeker.destroy();
+        if (this._seeker)
+            this._seeker.destroy();
+        }
         if (this._prop)
             this._prop.disconnectSignal(this._propChangedId);
 
