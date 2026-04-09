@@ -435,6 +435,8 @@ AppSwitcher.prototype = {
     },
 
     _activateSelected: function () {
+        if (!this._windows)
+            return;
         const _window = this._windows[this._currentIndex]
         const workspace_num = _window.get_workspace().index();
         Main.activateWindow(_window, global.get_current_time(), workspace_num);
