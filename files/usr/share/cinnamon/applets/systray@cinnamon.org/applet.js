@@ -212,9 +212,10 @@ class CinnamonSystrayApplet extends Applet.Applet {
 
     _onTrayIconRemoved(o, icon) {
         const parent = icon.get_parent();
-
-        parent.remove_actor(icon);
-        parent.destroy()
+        if (parent) {
+            parent.remove_actor(icon);
+            parent.destroy()
+        }
     }
 }
 
